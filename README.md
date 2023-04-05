@@ -1,11 +1,12 @@
 # Zar Haskell: formally verified sampling from discrete probability distributions.
 
 See the related [paper](https://arxiv.org/abs/2211.06747) (to appear
-in PLDI'23) and [Github repository](https://github.com/bagnalla/zar).
+in PLDI'23), the main [Zar Github
+repository](https://github.com/bagnalla/zar), and similar [OCaml
+package](https://github.com/bagnalla/ocamlzar).
 
 See the README of the [OCaml version of this
-package](https://github.com/bagnalla/ocamlzar) for a
-general rundown.
+package](https://github.com/bagnalla/ocamlzar) for a general introduction.
 
 ## Overview
 
