@@ -1,0 +1,94 @@
+cabal-version: 2.0
+
+-- This file has been generated from package.yaml by hpack version 0.35.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           zar
+version:        0.9.0.0
+synopsis:       Formally verified sampling from discrete probability distributions.
+description:    Please see the README on GitHub at <https://github.com/bagnalla/zar/blob/main/haskell/zar/README.md>
+category:       Random
+homepage:       https://github.com/bagnalla/zar#readme
+bug-reports:    https://github.com/bagnalla/zar/issues
+author:         Alexander Bagnall
+maintainer:     abagnalla@gmail.com
+copyright:      2023 Alexander Bagnall
+license:        MIT
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/bagnalla/zar
+
+library
+  exposed-modules:
+      Core
+      Coin
+      Die
+      Findist
+  other-modules:
+      Paths_zar
+  autogen-modules:
+      Paths_zar
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      base >=4.7 && <5
+    , mwc-random >=0.15.0 && <0.16
+    , pipes >=4.3.16 && <4.4
+    , primitive >=0.7.0 && <0.8
+    , zar-internal
+  default-language: Haskell2010
+
+library zar-internal
+  exposed-modules:
+      Samplers
+  other-modules:
+      Paths_zar
+  autogen-modules:
+      Paths_zar
+  hs-source-dirs:
+      src-internal
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable zar-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_zar
+  autogen-modules:
+      Paths_zar
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , mwc-random
+    , pipes
+    , zar
+  default-language: Haskell2010
+
+test-suite zar-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_zar
+  autogen-modules:
+      Paths_zar
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      QuickCheck >=2.14.2 && <2.15
+    , base >=4.7 && <5
+    , zar
+    , zar-internal
+  default-language: Haskell2010

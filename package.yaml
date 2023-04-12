@@ -47,9 +47,9 @@ library:
   - Findist
   dependencies:
   - zar-internal
-  - pipes
-  - mwc-random
-  - primitive
+  - pipes >= 4.3.16 && < 4.4
+  - mwc-random >= 0.15.0 && < 0.16
+  - primitive >= 0.7.0 && < 0.8
 
 executables:
   zar-exe:
@@ -75,4 +75,4 @@ tests:
     dependencies:
     - zar-internal
     - zar
-    - QuickCheck
+    - QuickCheck >= 2.14.2 && < 2.15
